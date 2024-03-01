@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-basis: 25%;
-    border-style: solid 1px;
+    border: 1px solid;
 }
 
 .column-center {
@@ -20,8 +20,58 @@ body {
     border-style: solid 1px;
 }
 
+.play-button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .play-classic-button,
 .play-advanced-button {
     height: 50px;
     width: 200px;
+}
+
+.rules {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.item-choices, 
+.item-choices-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item-select, 
+.item-select-2 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+
+#rock-select {
+    background: grey;
+}
+
+#paper-select {
+    background: yellow;
+}
+
+#scissors-select {
+    background: red;
+}
+
+#dino-select {
+    background: green;
+}
+
+#fire-select {
+    background: purple;
+}
+
+.rule5 {
+    text-wrap: wrap;
 }

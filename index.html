@@ -8,14 +8,14 @@
 </head>
 <body>
     <section class="column-left">
-        <header>[HUMAN IMAGE]</header>
-            <h1>P1</h1>
+        <header class="human-image">[HUMAN IMAGE]</header>
+            <h1 class="human-name">P1</h1>
                 <h2>Wins: <span class="human-wins">0</span>
                 </h2>
     </section>
     <section class="column-center">
         <header>Rock! Paper! Scissors!</header>
-            <h1>CHOOSE YOUR BATTLE</h1>
+            <h1 class="banner">CHOOSE YOUR BATTLE</h1>
             <section class="play-button-section">
                 <button
                   type="submit"
@@ -25,14 +25,52 @@
                 <button
                 type="submit"
                 class="play-advanced-button"
-                id="play-advanced-button">Play Advanced
-              </button>    
-            </section>    
-    </section>
+                id="play-advanced-button">Play Advanced <strong>UN-HIDE ".item-choices-2"</strong>
+                </button>
+            </section>
+            <br>
+            <section class="rules">
+                <article class="rules3">
+                    <li>Rock > Scissors</li>
+                    <li>Scissors > Paper</li>
+                    <li>Paper > Rock</li>
+                    <li><strong>MOVE INSIDE PLAY CLASSIC COLUMN</strong></li>
+                </article>
+                <article class="rules5">
+                    <li>Scissors > Paper/Dinosaur </li>
+                    <li>Paper > Rock/Fire</li>
+                    <li>Rock > Dinosaur/Scissors</li>
+                    <li>Dinosaur > Fire/Paper</li>
+                    <li>Fire > Scissors/Rock</li>
+                    <li><strong>MOVE INSIDE PLAY ADVANCED COLUMN</strong></li>
+                </article>
+            </section>   
+            <br>   
+            <div class="item-choices"> 
+                <section class="item-select" id="rock-select">
+                    <p>🗿</p>
+                </section> 
+                <section class="item-select" id="paper-select">
+                    <p>🧻</p>
+                </section> 
+                <section class="item-select" id="scissors-select">
+                    <p>✂️</p>
+                </section>
+            </div>
+            <div class="item-choices-2"> 
+                <section class="item-select-2" id="dino-select">
+                    <p>🦖 <strong>NO LISTENERS YET</strong></p>
+                </section> 
+                <section class="item-select-2" id="fire-select">
+                    <p>🔥 <strong>NO LISTENERS YET</strong></p>
+                </section> 
+            </div>
+    </section>        
     <section class="column-right">
-        <header>[CPU IMAGE]</header>
-        <h1>CPU</h1>
+        <header class="cpu-image">[CPU IMAGE]</header>
+        <h1 class="cpu-name">CPU</h1>
             <h2>Wins: <span class="cpu-wins">0</span>
     </section>    
+    <script src="main.js"></script>
 </body>
 </html>
