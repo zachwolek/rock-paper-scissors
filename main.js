@@ -89,21 +89,23 @@ function getRPSResult(humanChoice){
     if (humanChoice === cpuChoice){
         //more functions needed
         tieGame(humanChoice, cpuChoice)
-    } else if   
+    } else if  
         ((humanChoice === "Rock" && cpuChoice === "Scissors") ||
         (humanChoice === "Scissors" && cpuChoice === "Paper") ||
         (humanChoice === "Paper" && cpuChoice === "Rock")){
             //more functions needed
             humanNewCount++;
-            console.log(humanNewCount)
+            // console.log(humanNewCount)
             displayHumanWin(humanNewCount);
             humanWins(humanChoice, cpuChoice);
+            /////Change name of displayHumanWin to clarify for COUNTER
+            //// HumanWins change name to clarify for MATCH OUTCOME
     } else { 
-            //more functions needed
-            cpuNewCount++;
-            displayCpuWin(cpuNewCount);
-            cpuWins(humanChoice, cpuChoice);
-        }
+        //more functions needed
+        cpuNewCount++;
+        displayCpuWin(cpuNewCount);
+        cpuWins(humanChoice, cpuChoice);
+    }
 }
 
 function tieGame(humanChoice) {
@@ -118,6 +120,7 @@ function tieGame(humanChoice) {
     }
 }
 
+
 function humanWins(humanChoice, cpuChoice) {
     bannerDisplay.innerText = `${humanChoice} beats ${cpuChoice}! You are a winner!`
 }
@@ -128,11 +131,11 @@ function cpuWins(humanChoice, cpuChoice) {
 
 
 function displayHumanWin(humanNewCount){
-    console.log("FUNCTION console log: ", humanNewCount)
+    // console.log("FUNCTION console log: ", humanNewCount)
     humanWinsDisplay.innerText = humanNewCount;
 }
 
 function displayCpuWin(cpuNewCount){
-    console.log("FUNCTION console log: ", cpuNewCount)
+    // console.log("FUNCTION console log: ", cpuNewCount)
     cpuWinsDisplay.innerText = cpuNewCount;
 }
