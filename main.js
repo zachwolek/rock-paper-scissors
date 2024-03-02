@@ -1,14 +1,18 @@
 //<><><><>Query Selectors<><><><>
 var playClassicButton = document.querySelector(".play-classic-button");
 var playAdvancedButton = document.querySelector(".play-advanced-button");
-var rpsIconDisplay = document.querySelector(".weapon-choices-rps")
-var dfIconDisplay = document.querySelector(".weapon-choices-df")
+var rpsIconDisplay = document.querySelector(".weapon-choices-rps");
+var rpsdfIconDisplay = document.querySelector(".weapon-choices-rpsdf");
 
 var rockSelect = document.querySelector("#rock-select");
 var paperSelect = document.querySelector("#paper-select");
 var scissorsSelect = document.querySelector("#scissors-select");
-var fireSelect = document.querySelector("#fire-select")
-var dinoSelect = document.querySelector("#dino-select")
+
+var rockSelect5 = document.querySelector("#rock-select-5");
+var paperSelect5 = document.querySelector("#paper-select-5");
+var scissorsSelect5 = document.querySelector("#scissors-select-5");
+var dinoSelect5 = document.querySelector("#dino-select-5");
+var fireSelect5 = document.querySelector("#fire-select-5");
 
 var bannerDisplay = document.querySelector(".banner");
 var cpuImage = document.querySelector(".cpu-image");
@@ -32,11 +36,21 @@ paperSelect.addEventListener('click', function() {
 scissorsSelect.addEventListener('click', function() {
     getRPSResult("Scissors")
 });
-dinoSelect.addEventListener('click', function() {
-    getRPSesult("Dinosaur")
+
+rockSelect5.addEventListener('click', function() {
+    getRPSDFResult("Rock");
 });
-fireSelect.addEventListener('click', function() {
-    getRPSResult("Fire");
+paperSelect5.addEventListener('click', function() {
+    getRPSDFResult("Paper");
+});
+scissorsSelect5.addEventListener('click', function() {
+    getRPSDFResult("Scissors");
+}); 
+dinoSelect5.addEventListener('click', function() {
+    getRPSDFResult("Dinosaur")
+});
+fireSelect5.addEventListener('click', function() {
+    getRPSDFResult("Fire");
 }); 
 
 var rpsShoot = ["Rock", "Paper", "Scissors"];
@@ -69,8 +83,7 @@ function playClassic(){
     rpsIconDisplay.classList.remove("hidden")
 }
 function playAdvanced(){
-    rpsIconDisplay.classList.remove("hidden")
-    dfIconDisplay.classList.remove("hidden")
+    rpsdfIconDisplay.classList.remove("hidden")
 }
 
 function cpuTurnRPS(){
@@ -108,8 +121,9 @@ function getRPSResult(humanChoice){
         tieGame(humanChoice, cpuChoice)
     } else if  
         ((humanChoice === "Rock" && cpuChoice === "Scissors") ||
-        (humanChoice === "Scissors" && cpuChoice === "Paper") ||
-        (humanChoice === "Paper" && cpuChoice === "Rock")){
+        (humanChoice === "Paper" && cpuChoice === "Rock") ||
+        (humanChoice === "Scissors" && cpuChoice === "Paper") 
+        ){
             //more functions needed
             humanNewCount++;
             displayHumanWin(humanNewCount);
@@ -124,9 +138,11 @@ function getRPSResult(humanChoice){
     }
 }
 
-function getRPSResult(humanChoice){
+function getRPSDFResult(humanChoice){
     bannerDisplay.innerText = '';
-    var cpuChoice = cpuTurnRPS();
+    var cpuChoice = cpuTurnRPSDF();
+    console.log("HUMAN SAYS: ", humanChoice)
+    console.log("ROBOT SAYS: ", cpuChoice)
     //create function for winner
     //create function for database
             //"____" is the winner &
@@ -135,15 +151,20 @@ function getRPSResult(humanChoice){
         //more functions needed
         tieGame(humanChoice, cpuChoice)
     } else if  
-        ((humanChoice === "Rock" && cpuChoice === "Scissors") ||
-        (humanChoice === "Scissors" && cpuChoice === "Paper") ||
-        (humanChoice === "Paper" && cpuChoice === "Rock")){
-            //more functions needed
+        ((humanChoice === "Rock" && cpuChoice === "Scissors")    ||
+        (humanChoice === "Rock" && cpuChoice === "Dinosaur")    ||
+        (humanChoice === "Paper" && cpuChoice === "Rock")       ||
+        (humanChoice === "Paper" && cpuChoice === "Fire")       ||
+        (humanChoice === "Scissors" && cpuChoice === "Paper")   ||
+        (humanChoice === "Scissors" && cpuChoice === "Dinosaur")||
+        (humanChoice === "Dinosaur" && cpuChoice === "Fire")    ||
+        (humanChoice === "Dinosaur" && cpuChoice === "Paper")   ||
+        (humanChoice === "Fire" && cpuChoice === "Scissors")    ||
+        (humanChoice === "Fire" && cpuChoice === "Rock")){
+         //more functions needed
             humanNewCount++;
             displayHumanWin(humanNewCount);
             humanWins(humanChoice, cpuChoice);
-            /////Change name of displayHumanWin to clarify for COUNTER
-            //// HumanWins change name to clarify for MATCH OUTCOME
     } else { 
         //more functions needed
         cpuNewCount++;
@@ -152,27 +173,29 @@ function getRPSResult(humanChoice){
     }
 }
 
-
-
 function tieGame(humanChoice) {
     if (humanChoice === "Rock"){
         bannerDisplay.innerText = "Rocky! Rocky! Rocky! 👔 match!"
     } else if 
         (humanChoice === "Scissors"){
         bannerDisplay.innerText = "SCISSOR ME TIMBERS! 👔 match!"
-    } else {
+    } else if 
+        (humanChoice === "Paper"){
         bannerDisplay.innerText = `Paper Boi, Paper Boi! All about that paper, boy!
         👔 match!`
-    }
+    } else if 
+    (humanChoice === "Dinosaur"){
+    bannerDisplay.innerText = `Clever girls! 👔 match!`
+    } else
+    bannerDisplay.innerText = "FIRE FIRE FIRE FIRE 👔 match!"
 }
 
-
 function humanWins(humanChoice, cpuChoice) {
-    bannerDisplay.innerText = `${humanChoice} beats ${cpuChoice}! ${humanPlayer.name} is a winner!`
+    bannerDisplay.innerText = `${humanChoice} beats ${cpuChoice}! ${humanPlayer.name} is a WINNER!`
 }
 
 function cpuWins(humanChoice, cpuChoice) {
-    bannerDisplay.innerText = `${cpuChoice} beats ${humanChoice}! You get nothing! ${cpuPlayer.name} wins! Good day!`
+    bannerDisplay.innerText = `${cpuChoice} beats ${humanChoice}! ${cpuPlayer.name} wins! YOU LOSE!`
 }
 
 

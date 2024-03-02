@@ -31,7 +31,7 @@ body {
 }
 
 .weapon-choices-rps, 
-.weapon-choices-df {
+.weapon-choices-rpsdf {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -63,11 +63,23 @@ body {
     background: red;
 }
 
-#dino-select {
+#rock-select-5 {
+    background: grey;
+}
+
+#paper-select-5 {
+    background: yellow;
+}
+
+#scissors-select-5 {
+    background: red;
+}
+
+#dino-select-5 {
     background: green;
 }
 
-#fire-select {
+#fire-select-5 {
     background: purple;
 }
 
