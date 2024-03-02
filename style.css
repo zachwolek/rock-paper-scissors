@@ -20,37 +20,36 @@ body {
     border-style: solid 1px;
 }
 
-.play-button-section {
+.choose-game {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
 .play-classic-button,
 .play-advanced-button {
-    height: 50px;
-    width: 200px;
+    border: 1px solid;
 }
 
-.rules {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.item-choices, 
-.item-choices-2 {
+.weapon-choices-rps, 
+.weapon-choices-df {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.item-select, 
-.item-select-2 {
+.weapon-select {
     width: 100px;
     height: 100px;
     border: 1px solid;
 }
+
+.rules3,
+.rules5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 
 #rock-select {
     background: grey;
@@ -72,6 +71,6 @@ body {
     background: purple;
 }
 
-.rule5 {
-    text-wrap: wrap;
-}
+.hidden {
+    display: none;
+  }
