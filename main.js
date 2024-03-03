@@ -1,10 +1,15 @@
 //<><><><>Query Selectors<><><><>
 var playClassicButton = document.querySelector(".play-classic-button");
 var playAdvancedButton = document.querySelector(".play-advanced-button");
-var changeGameButton = document.querySelector(".change-game")
+var changeGameButton = document.querySelector(".change-game-button")
 var rpsIconDisplay = document.querySelector(".weapon-choices-rps");
 var rpsdfIconDisplay = document.querySelector(".weapon-choices-rpsdf");
-var chooseGameDisplay = document.querySelector(".choose-game")
+var chooseGameDisplay = document.querySelector(".choose-game");
+var matchResultsDisplay = document.querySelector(".match-results");
+var humanChoiceDisplay = document.querySelector(".human-choice-display");
+var cpuChoiceDisplay = document.querySelector(".cpu-choice-display");
+var headerMainDisplayRPS = document.querySelector(".header-main-rps");
+var headerMainDisplayRPSDF = document.querySelector(".header-main-rpsdf");
 
 var rockSelect = document.querySelector("#rock-select");
 var paperSelect = document.querySelector("#paper-select");
@@ -39,7 +44,7 @@ paperSelect.addEventListener('click', function() {
 scissorsSelect.addEventListener('click', function() {
     getRPSResult("Scissors")
 });
-
+//<><><>ADVANCED GAMES<><><>
 rockSelect5.addEventListener('click', function() {
     getRPSDFResult("Rock");
 });
@@ -58,7 +63,6 @@ fireSelect5.addEventListener('click', function() {
 
 var rpsShoot = ["Rock", "Paper", "Scissors"];
 var rpsdfShoot = ["Rock", "Paper", "Scissors", "Dinosaur", "Fire"];
-///^^^ give this a parameter "CHOICE" to change ______.length? Suggestion offered
 
 var humanPlayer = {
     name: "Player One",
@@ -82,39 +86,6 @@ var cpuNewCount = 0;
 
 
 //<><><>Functions<><><>
-function playClassic(){
-    rpsIconDisplay.classList.remove("hidden")
-    rpsdfIconDisplay.classList.add("hidden")
-    chooseGameDisplay.classList.add("hidden")
-    changeGameButton.classList.remove("hidden")
-}
-function playAdvanced(){
-    rpsdfIconDisplay.classList.remove("hidden")
-    rpsIconDisplay.classList.add("hidden")
-    chooseGameDisplay.classList.add("hidden")
-    changeGameButton.classList.remove("hidden")
-}
-
-function changeGame(){
-    console.log("CHANGE GAME BUTTON TEST")
-    rpsdfIconDisplay.classList.toggle('hidden');
-    rpsIconDisplay.classList.toggle('hidden');
-}
-
-function cpuTurnRPS(){
-    var randomIndex = Math.floor(Math.random() * rpsShoot.length);
-    var cpuChoice = rpsShoot[randomIndex]
-    return cpuChoice
-};
-
-function cpuTurnRPSDF(){
-    var randomIndex = Math.floor(Math.random() * rpsdfShoot.length);
-    var cpuChoice = rpsdfShoot[randomIndex]
-    console.log("RPSDF SHOOT: ", cpuChoice)
-    return cpuChoice
-};
-
-
 // function 
 //function createGame(){}
 //function createPlayers(){}
@@ -123,45 +94,81 @@ function cpuTurnRPSDF(){
  
 
 
+function playClassic(){
+    rpsIconDisplay.classList.remove("hidden")
+    rpsdfIconDisplay.classList.add("hidden")
+    chooseGameDisplay.classList.add("hidden")
+    changeGameButton.classList.remove("hidden")
+    headerMainDisplayRPS.classList.remove("hidden")
+    headerMainDisplayRPSDF.classList.add("hidden")
+    matchResultsDisplay.classList.add("hidden")
+    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
+}
+function playAdvanced(){
+    rpsdfIconDisplay.classList.remove("hidden")
+    rpsIconDisplay.classList.add("hidden")
+    chooseGameDisplay.classList.add("hidden")
+    changeGameButton.classList.remove("hidden")
+    headerMainDisplayRPSDF.classList.remove("hidden")
+    headerMainDisplayRPS.classList.add("hidden")
+    matchResultsDisplay.classList.add("hidden")
+    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
+}
+
+function changeGame(){
+    rpsdfIconDisplay.classList.toggle('hidden');
+    rpsIconDisplay.classList.toggle('hidden');
+    headerMainDisplayRPS.classList.toggle("hidden");
+    headerMainDisplayRPSDF.classList.toggle("hidden");
+}
+
+function cpuTurnRPS(){
+    var randomIndex = Math.floor(Math.random() * rpsShoot.length);
+    var cpuChoice = rpsShoot[randomIndex];
+    return cpuChoice
+};
+
+function cpuTurnRPSDF(){
+    var randomIndex = Math.floor(Math.random() * rpsdfShoot.length);
+    var cpuChoice = rpsdfShoot[randomIndex];
+    return cpuChoice;
+};
+
+
 function getRPSResult(humanChoice){
     bannerDisplay.innerText = '';
     var cpuChoice = cpuTurnRPS();
-    //create function for winner
-    //create function for database
-    //create function for DOM update
-            //"____" is the winner &
-            //"Winner Count _____"
+    console.log("HUMAN CHOICE RPS:", humanChoice)
+    console.log("CPU CHOICE RPS:", cpuChoice)
+    displayResults(humanChoice, cpuChoice)
     if (humanChoice === cpuChoice){
-        //more functions needed
         tieGame(humanChoice, cpuChoice)
     } else if  
         ((humanChoice === "Rock" && cpuChoice === "Scissors") ||
         (humanChoice === "Paper" && cpuChoice === "Rock") ||
-        (humanChoice === "Scissors" && cpuChoice === "Paper") 
+        (humanChoice === "Scissors" && cpuChoice === "Paper")
         ){
-            //more functions needed
-            humanNewCount++;
-            displayHumanWin(humanNewCount);
-            humanWins(humanChoice, cpuChoice);
-            /////Change name of displayHumanWin to clarify for COUNTER
-            //// HumanWins change name to clarify for MATCH OUTCOME
+        humanNewCount++;
+        displayHumanWin(humanNewCount);
+        humanWins(humanChoice, cpuChoice);
     } else { 
-        //more functions needed
         cpuNewCount++;
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
+    setTimeout(playClassic, 1500)
 }
 
 function getRPSDFResult(humanChoice){
     bannerDisplay.innerText = '';
     var cpuChoice = cpuTurnRPSDF();
-    console.log("HUMAN SAYS: ", humanChoice)
-    console.log("ROBOT SAYS: ", cpuChoice)
     //create function for winner
     //create function for database
             //"____" is the winner &
             //"Winner Count _____"
+    console.log("HUMAN CHOICE RPSDF:", humanChoice)
+    console.log("CPU CHOICE RPSDF:", cpuChoice)
+    displayResults(humanChoice, cpuChoice)
     if (humanChoice === cpuChoice){
         tieGame(humanChoice, cpuChoice)
     } else if  
@@ -186,6 +193,7 @@ function getRPSDFResult(humanChoice){
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
+    setTimeout(playAdvanced, 1500)
 }
 
 function tieGame(humanChoice) {
@@ -199,11 +207,24 @@ function tieGame(humanChoice) {
         bannerDisplay.innerText = `Paper Boi, Paper Boi! All about that paper, boy!
         👔 match!`
     } else if 
-    (humanChoice === "Dinosaur"){
-    bannerDisplay.innerText = `Clever girls! 👔 match!`
+        (humanChoice === "Dinosaur"){
+        bannerDisplay.innerText = `Clever girls! 👔 match!`
     } else
-    bannerDisplay.innerText = "FIRE FIRE FIRE FIRE 👔 match!"
+        bannerDisplay.innerText = "FIRE FIRE FIRE FIRE 👔 match!"
 }
+
+function displayResults(humanChoice, cpuChoice){
+    rpsdfIconDisplay.classList.add("hidden");
+    rpsIconDisplay.classList.add("hidden");
+    matchResultsDisplay.classList.remove("hidden")
+    humanChoiceDisplay.innerHTML = humanChoice;
+    cpuChoiceDisplay.innerHTML = cpuChoice;
+}
+
+
+//Create two functions for showing each 
+
+
 
 function humanWins(humanChoice, cpuChoice) {
     bannerDisplay.innerText = `${humanChoice} beats ${cpuChoice}! ${humanPlayer.name} is a WINNER!`
@@ -212,7 +233,6 @@ function humanWins(humanChoice, cpuChoice) {
 function cpuWins(humanChoice, cpuChoice) {
     bannerDisplay.innerText = `${cpuChoice} beats ${humanChoice}! ${cpuPlayer.name} wins! YOU LOSE!`
 }
-
 
 function displayHumanWin(humanNewCount){
     humanWinsDisplay.innerText = humanNewCount;
