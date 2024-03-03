@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
 </head>
 <body>
     <section class="column-left">
         <header class="human-image">[HUMAN IMAGE]</header>
-            <h1 class="human-name">P1</h1>
-                <h2>Wins: <span class="human-wins">0</span></h2>
+        <h1 class="human-name">P1</h1>
+        <h2>Wins: <span class="human-wins">0</span></h2>
+        <button class="change-game hidden">CHANGE GAME?</button>
     </section>
     <section class="column-center">
         <header>Rock! Paper! Scissors!</header>
@@ -39,40 +41,36 @@
             </section>  
             <div class="weapon-choices-rps hidden"> 
                 <section class="weapon-select" id="rock-select">
-                    <p>🗿</p>
+                    <img class="rock-image" src="./assets/rock.png">
                 </section> 
                 <section class="weapon-select" id="paper-select">
-                    <p>🧻</p>
+                    <img class="paper-image" src="./assets/paper.png">
                 </section> 
                 <section class="weapon-select" id="scissors-select">
-                    <p>✂️</p>
+                    <img class="scissors-image" src="./assets/scissors.png">
                 </section>
             </div>
-            <div class="weapon-choices-rpsdf hidden"> 
-                <section class="weapon-select" id="rock-select-5">
-                      <p>🗿</p>
-                </section> 
-                <section class="weapon-select" id="paper-select-5">
-                     <p>🧻</p>
-                </section> 
-                <section class="weapon-select" id="scissors-select-5">
-                    <p>✂️</p>
-                </section>   
-                <section class="weapon-select" id="dino-select-5">
-                    <p>🦖</strong></p>
-                </section> 
-                <section class="weapon-select" id="fire-select-5">
-                    <p>🔥</p>
-                </section> 
-                <p>Add Change Game Button/TIMEOUT FUNCTION</p>
+            <div class="weapon-choices-rpsdf hidden">
+                <div class="top-row-rpsdf">
+                    <section class="weapon-select" id="rock-select-5">
+                        <img class="rock-image" src="./assets/rock.png">
+                    </section> 
+                    <section class="weapon-select" id="paper-select-5">
+                        <img class="paper-image" src="./assets/paper.png">
+                    </section> 
+                    <section class="weapon-select" id="scissors-select-5">
+                        <img class="scissors-image" src="./assets/scissors.png">
+                    </section>
+                </div>
+                <div class="bottom-row-rpsdf">
+                    <section class="weapon-select" id="dino-select-5">
+                        <img class="dino-image" src="./assets/dino.png">
+                    </section> 
+                    <section class="weapon-select" id="fire-select-5">
+                        <img class="fire-image" src="./assets/fire.png">
+                    </section> 
+                </div>
             </div>
-
-
-
-
-
-
-
     </section>        
     <section class="column-right">
         <header class="cpu-image">[CPU IMAGE]</header>

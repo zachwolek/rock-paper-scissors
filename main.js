@@ -1,8 +1,10 @@
 //<><><><>Query Selectors<><><><>
 var playClassicButton = document.querySelector(".play-classic-button");
 var playAdvancedButton = document.querySelector(".play-advanced-button");
+var changeGameButton = document.querySelector(".change-game")
 var rpsIconDisplay = document.querySelector(".weapon-choices-rps");
 var rpsdfIconDisplay = document.querySelector(".weapon-choices-rpsdf");
+var chooseGameDisplay = document.querySelector(".choose-game")
 
 var rockSelect = document.querySelector("#rock-select");
 var paperSelect = document.querySelector("#paper-select");
@@ -26,6 +28,7 @@ var cpuWinsDisplay = document.querySelector(".cpu-wins");
 //<><><>event listeners<><><>
 playClassicButton.addEventListener('click', playClassic)
 playAdvancedButton.addEventListener('click', playAdvanced)
+changeGameButton.addEventListener('click', changeGame)
 
 rockSelect.addEventListener('click', function(){
     getRPSResult("Rock")
@@ -81,9 +84,21 @@ var cpuNewCount = 0;
 //<><><>Functions<><><>
 function playClassic(){
     rpsIconDisplay.classList.remove("hidden")
+    rpsdfIconDisplay.classList.add("hidden")
+    chooseGameDisplay.classList.add("hidden")
+    changeGameButton.classList.remove("hidden")
 }
 function playAdvanced(){
     rpsdfIconDisplay.classList.remove("hidden")
+    rpsIconDisplay.classList.add("hidden")
+    chooseGameDisplay.classList.add("hidden")
+    changeGameButton.classList.remove("hidden")
+}
+
+function changeGame(){
+    console.log("CHANGE GAME BUTTON TEST")
+    rpsdfIconDisplay.classList.toggle('hidden');
+    rpsIconDisplay.classList.toggle('hidden');
 }
 
 function cpuTurnRPS(){
@@ -148,7 +163,6 @@ function getRPSDFResult(humanChoice){
             //"____" is the winner &
             //"Winner Count _____"
     if (humanChoice === cpuChoice){
-        //more functions needed
         tieGame(humanChoice, cpuChoice)
     } else if  
         ((humanChoice === "Rock" && cpuChoice === "Scissors")    ||
@@ -160,7 +174,8 @@ function getRPSDFResult(humanChoice){
         (humanChoice === "Dinosaur" && cpuChoice === "Fire")    ||
         (humanChoice === "Dinosaur" && cpuChoice === "Paper")   ||
         (humanChoice === "Fire" && cpuChoice === "Scissors")    ||
-        (humanChoice === "Fire" && cpuChoice === "Rock")){
+        (humanChoice === "Fire" && cpuChoice === "Rock")
+        ){
          //more functions needed
             humanNewCount++;
             displayHumanWin(humanNewCount);

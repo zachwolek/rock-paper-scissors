@@ -3,12 +3,16 @@ body {
     flex-direction: row;
     width: 100vw;
     height: 100vh;
+    font-family: 'ArcadeClassic', sans-serif;
+    background-color: #371F76;
+    color: white;
 }
 
 .column-left,
 .column-right {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex-basis: 25%;
     border: 1px solid;
 }
@@ -20,9 +24,18 @@ body {
     border-style: solid 1px;
 }
 
+.human-image,
+.cpu-image {
+    height: 100px;
+    width: 100px;
+    font-size: 100px 
+}
+
 .choose-game {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
 }
 
 .play-classic-button,
@@ -30,16 +43,19 @@ body {
     border: 1px solid;
 }
 
+header,
+.banner,
 .weapon-choices-rps, 
-.weapon-choices-rpsdf {
+.top-row-rpsdf,
+.bottom-row-rpsdf {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .weapon-select {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: 1px solid;
 }
 
@@ -50,16 +66,36 @@ body {
     justify-content: space-around;
 }
 
+.change-game {
+      background-color: #A1A1A4;
+      border-radius: 6px;
+      border-width: 0;
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      font-size: 100%;
+      height: 50px;
+      width: 150px;
+    }
 
-#rock-select {
+.rock-image,
+.paper-image,
+.scissors-image, 
+.dino-image,
+.fire-image {
+    height: 200px;
+    width: 200px;
+}
+
+/* #rock-select {
     background: grey;
-}
+} */
 
-#paper-select {
+/* #paper-select {
     background: yellow;
-}
+} */
 
-#scissors-select {
+/* #scissors-select {
     background: red;
 }
 
@@ -81,7 +117,7 @@ body {
 
 #fire-select-5 {
     background: purple;
-}
+} */
 
 .hidden {
     display: none;
