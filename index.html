@@ -12,14 +12,15 @@
         <header class="human-image">[HUMAN IMAGE]</header>
         <h1 class="human-name">P1</h1>
         <h2>Wins: <span class="human-wins">0</span></h2>
-        <button class="change-game hidden">CHANGE GAME?</button>
+        <button class="change-game-button hidden">CHANGE GAME?</button>
     </section>
     <section class="column-center">
-        <header>Rock! Paper! Scissors!</header>
+        <header class="header-main-rps">Rock! Paper! Scissors!</header>
+        <header class="header-main-rpsdf hidden">Rock! Paper! Scissors! Dino! Fire!</header>
             <h1 class="banner">CHOOSE YOUR BATTLE</h1>
             <section class="choose-game">
                 <div class="play-classic-button">
-                    <h2 class="play-classic-header" id="play-classic-header">Play Advanced
+                    <h2 class="play-classic-header" id="play-classic-header">Play Classic
                     </h2>
                     <article class="rules3">
                         <li>Rock > Scissors</li>
@@ -71,12 +72,16 @@
                     </section> 
                 </div>
             </div>
+            <section class="match-results">
+                <div class="human-choice-display"></div>
+                <div class="cpu-choice-display"></div> 
+            </section>
     </section>        
     <section class="column-right">
         <header class="cpu-image">[CPU IMAGE]</header>
         <h1 class="cpu-name">CPU</h1>
             <h2>Wins: <span class="cpu-wins">0</span>
-    </section>    
+    </section>   
     <script src="main.js"></script>
 </body>
 </html>
