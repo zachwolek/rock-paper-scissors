@@ -87,6 +87,11 @@ body {
     width: 180px;
 }
 
+.rules3:hover,
+.rules5:hover {
+    background-image: linear-gradient(#371F76, #00788C, #00788C);
+    color: #F9423A;
+  }
 
 .weapon-choices-rps, 
 .top-row-rpsdf,
@@ -102,14 +107,22 @@ body {
 }
 
 .change-game-button {
-      background-color: #00788C;
-      border-radius: 5px;
-      border: solid 3px #A1A1A4;
-      box-sizing: border-box;
-      color: white;
-      font-size: 100%;
-      height: 50px;
-      width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00788C;
+    border-radius: 5px;
+    border: solid 3px #A1A1A4;
+    box-sizing: border-box;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    }
+
+.change-game-button:hover {
+    background-image: linear-gradient(#371F76, #00788C, #00788C, #00788C);
+    color: #F9423A;
     }
 
 .rock-image,
@@ -120,6 +133,15 @@ body {
     height: 200px;
     width: 200px;
 }
+
+.rock-image:hover,
+.paper-image:hover,
+.scissors-image:hover, 
+.dino-image:hover,
+.fire-image:hover  {
+    background-image: linear-gradient(#371F76, #00788C);
+    border-radius: 5px;
+    }
 
 .match-results {
     display: flex;
@@ -132,3 +154,7 @@ body {
 .hidden {
     display: none;
   }
+
+.temp-background {
+    background-color: #371F76;
+}

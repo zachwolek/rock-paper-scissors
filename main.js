@@ -83,17 +83,6 @@ humanName.innerText = humanPlayer.name
 var humanNewCount = 0;
 var cpuNewCount = 0;
 
-
-
-//<><><>Functions<><><>
-// function 
-//function createGame(){}
-//function createPlayers(){}
-//function saveWinsToStorage(){} [OPTIONAL?]
-//function retreiveWinsFromStorage(){} [OPTIONAL?]
- 
-
-
 function playClassic(){
     rpsIconDisplay.classList.remove("hidden")
     rpsdfIconDisplay.classList.add("hidden")
@@ -164,8 +153,6 @@ function getRPSResult(humanChoice){
 function getRPSDFResult(humanChoice){
     bannerDisplay.innerText = '';
     var cpuChoice = cpuTurnRPSDF();
-    console.log("HUMAN CHOICE RPSDF:", humanChoice)
-    console.log("CPU CHOICE RPSDF:", cpuChoice)
     displayResults(humanChoice, cpuChoice)
     if (humanChoice === cpuChoice){
         tieGame(humanChoice, cpuChoice)
@@ -214,7 +201,7 @@ function displayResults(humanChoice, cpuChoice){
     changeGameButton.classList.add("hidden")
     rpsdfIconDisplay.classList.add("hidden");
     rpsIconDisplay.classList.add("hidden");
-    matchResultsDisplay.classList.remove("hidden")
+    matchResultsDisplay.classList.remove("hidden");
 }
 
 function displayHumanChoice(humanChoice){
