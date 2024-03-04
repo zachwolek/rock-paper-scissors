@@ -162,10 +162,6 @@ function getRPSResult(humanChoice){
 function getRPSDFResult(humanChoice){
     bannerDisplay.innerText = '';
     var cpuChoice = cpuTurnRPSDF();
-    //create function for winner
-    //create function for database
-            //"____" is the winner &
-            //"Winner Count _____"
     console.log("HUMAN CHOICE RPSDF:", humanChoice)
     console.log("CPU CHOICE RPSDF:", cpuChoice)
     displayResults(humanChoice, cpuChoice)
@@ -183,12 +179,10 @@ function getRPSDFResult(humanChoice){
         (humanChoice === "Fire" && cpuChoice === "Scissors")    ||
         (humanChoice === "Fire" && cpuChoice === "Rock")
         ){
-         //more functions needed
-            humanNewCount++;
-            displayHumanWin(humanNewCount);
-            humanWins(humanChoice, cpuChoice);
+        humanNewCount++;
+        displayHumanWin(humanNewCount);
+         humanWins(humanChoice, cpuChoice);
     } else { 
-        //more functions needed
         cpuNewCount++;
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
@@ -240,8 +234,6 @@ function displayCpuChoice(cpuChoice){
     else if (cpuChoice === "Dinosaur"){cpuChoiceDisplay.innerHTML = `<img class="dino-image" src="./assets/dino.png"></img>`}
     else {cpuChoiceDisplay.innerHTML = `<img class="fire-image" src="./assets/fire.png"></img>`}
 }
-
-
 
 function humanWins(humanChoice, cpuChoice) {
     bannerDisplay.innerText = `${humanChoice} beats ${cpuChoice}! ${humanPlayer.name} is a WINNER!`
