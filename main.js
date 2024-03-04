@@ -102,7 +102,7 @@ function playClassic(){
     headerMainDisplayRPS.classList.remove("hidden")
     headerMainDisplayRPSDF.classList.add("hidden")
     matchResultsDisplay.classList.add("hidden")
-    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
+    bannerDisplay.innerText = 'CHOOSE YOUR ITEM'
 }
 function playAdvanced(){
     rpsdfIconDisplay.classList.remove("hidden")
@@ -112,7 +112,7 @@ function playAdvanced(){
     headerMainDisplayRPSDF.classList.remove("hidden")
     headerMainDisplayRPS.classList.add("hidden")
     matchResultsDisplay.classList.add("hidden")
-    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
+    bannerDisplay.innerText = 'CHOOSE YOUR ITEM'
 }
 
 function changeGame(){
@@ -198,19 +198,18 @@ function getRPSDFResult(humanChoice){
 
 function tieGame(humanChoice) {
     if (humanChoice === "Rock"){
-        bannerDisplay.innerText = "Rocky! Rocky! Rocky! 👔 match!"
+        bannerDisplay.innerText = "Rocky! Rocky! Rocky! TIE 👔 match!"
     } else if 
         (humanChoice === "Scissors"){
-        bannerDisplay.innerText = "SCISSOR ME TIMBERS! 👔 match!"
+        bannerDisplay.innerText = "SCISSOR ME TIMBERS! TIE 👔 match!"
     } else if 
         (humanChoice === "Paper"){
-        bannerDisplay.innerText = `Paper Boi, Paper Boi! All about that paper, boy!
-        👔 match!`
+        bannerDisplay.innerText = `TIE 👔 match!`
     } else if 
         (humanChoice === "Dinosaur"){
-        bannerDisplay.innerText = `Clever girls! 👔 match!`
+        bannerDisplay.innerText = `Clever girls! TIE 👔 match!`
     } else
-        bannerDisplay.innerText = "FIRE FIRE FIRE FIRE 👔 match!"
+        bannerDisplay.innerText = "We're having a fire sale! TIE 👔 match!"
 }
 
 function displayResults(humanChoice, cpuChoice){
