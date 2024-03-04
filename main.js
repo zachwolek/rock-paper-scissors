@@ -156,7 +156,7 @@ function getRPSResult(humanChoice){
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
-    setTimeout(playClassic, 1500)
+    setTimeout(playClassic, 2000)
 }
 
 function getRPSDFResult(humanChoice){
@@ -193,7 +193,7 @@ function getRPSDFResult(humanChoice){
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
-    setTimeout(playAdvanced, 1500)
+    setTimeout(playAdvanced, 2000)
 }
 
 function tieGame(humanChoice) {
@@ -214,15 +214,33 @@ function tieGame(humanChoice) {
 }
 
 function displayResults(humanChoice, cpuChoice){
+    displayHumanChoice(humanChoice);
+    displayCpuChoice(cpuChoice);
+    changeGameButton.classList.add("hidden")
     rpsdfIconDisplay.classList.add("hidden");
     rpsIconDisplay.classList.add("hidden");
     matchResultsDisplay.classList.remove("hidden")
-    humanChoiceDisplay.innerHTML = humanChoice;
-    cpuChoiceDisplay.innerHTML = cpuChoice;
 }
 
+function displayHumanChoice(humanChoice){
+    if (humanChoice === "Rock"){
+        humanChoiceDisplay.innerHTML = `<img class="rock-image" src="./assets/rock.png"></img>`}
+    else if (humanChoice === "Scissors"){
+        humanChoiceDisplay.innerHTML = `<img class="scissors-image" src="./assets/scissors.png"></img>`}
+    else if (humanChoice === "Paper"){
+        humanChoiceDisplay.innerHTML = `<img class="paper-image" src="./assets/paper.png"></img>`}
+    else if (humanChoice === "Dinosaur"){
+        humanChoiceDisplay.innerHTML = `<img class="dino-image" src="./assets/dino.png"></img>`}
+    else {humanChoiceDisplay.innerHTML = `<img class="fire-image" src="./assets/fire.png"></img>`}
+}
 
-//Create two functions for showing each 
+function displayCpuChoice(cpuChoice){
+    if (cpuChoice === "Rock"){cpuChoiceDisplay.innerHTML = `<img class="rock-image" src="./assets/rock.png"></img>`}
+    else if (cpuChoice === "Scissors"){cpuChoiceDisplay.innerHTML = `<img class="scissors-image" src="./assets/scissors.png"></img>`}
+    else if (cpuChoice === "Paper"){cpuChoiceDisplay.innerHTML = `<img class="paper-image" src="./assets/paper.png"></img>`}
+    else if (cpuChoice === "Dinosaur"){cpuChoiceDisplay.innerHTML = `<img class="dino-image" src="./assets/dino.png"></img>`}
+    else {cpuChoiceDisplay.innerHTML = `<img class="fire-image" src="./assets/fire.png"></img>`}
+}
 
 
 
