@@ -102,7 +102,7 @@ function playClassic(){
     headerMainDisplayRPS.classList.remove("hidden")
     headerMainDisplayRPSDF.classList.add("hidden")
     matchResultsDisplay.classList.add("hidden")
-    bannerDisplay.innerText = 'CHOOSE YOUR ITEM'
+    bannerDisplay.innerText = 'CHOOSE YOUR FIGHTER'
 }
 function playAdvanced(){
     rpsdfIconDisplay.classList.remove("hidden")
@@ -112,14 +112,16 @@ function playAdvanced(){
     headerMainDisplayRPSDF.classList.remove("hidden")
     headerMainDisplayRPS.classList.add("hidden")
     matchResultsDisplay.classList.add("hidden")
-    bannerDisplay.innerText = 'CHOOSE YOUR ITEM'
+    bannerDisplay.innerText = 'CHOOSE YOUR FIGHTER'
 }
 
 function changeGame(){
-    rpsdfIconDisplay.classList.toggle('hidden');
-    rpsIconDisplay.classList.toggle('hidden');
-    headerMainDisplayRPS.classList.toggle("hidden");
-    headerMainDisplayRPSDF.classList.toggle("hidden");
+    rpsdfIconDisplay.classList.add('hidden');
+    rpsIconDisplay.classList.add('hidden');
+    headerMainDisplayRPS.classList.remove("hidden");
+    headerMainDisplayRPSDF.classList.add("hidden");
+    chooseGameDisplay.classList.remove("hidden")
+    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
 }
 
 function cpuTurnRPS(){
@@ -156,7 +158,7 @@ function getRPSResult(humanChoice){
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
-    setTimeout(playClassic, 2000)
+    setTimeout(playClassic, 1500)
 }
 
 function getRPSDFResult(humanChoice){
@@ -187,7 +189,7 @@ function getRPSDFResult(humanChoice){
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
-    setTimeout(playAdvanced, 2000)
+    setTimeout(playAdvanced, 1500)
 }
 
 function tieGame(humanChoice) {
@@ -203,7 +205,7 @@ function tieGame(humanChoice) {
         (humanChoice === "Dinosaur"){
         bannerDisplay.innerText = `Clever girls! TIE 👔 match!`
     } else
-        bannerDisplay.innerText = "We're having a fire sale! TIE 👔 match!"
+        bannerDisplay.innerText = "It's a fire sale! TIE 👔 match!"
 }
 
 function displayResults(humanChoice, cpuChoice){

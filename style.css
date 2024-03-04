@@ -42,7 +42,7 @@ body {
     flex-direction: row;
     justify-content: center;
     font-size: 20px;
-    padding: 10px grey;
+    padding: 10px;
 }
 
 .banner {
@@ -63,20 +63,28 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: solid 1px white;
     width: 500px
+}
+
+.play-classic-header,
+.play-advanced-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .rules3,
 .rules5 {
+    background: #00788C;
+    border-radius: 5px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-around;
-    border: solid 1px white;
+    justify-content: space-evenly;
+    border: solid 3px #A1A1A4;
     height: 250px;
-    width: 200px;
-    padding-top: 40px;
+    width: 180px;
 }
 
 
@@ -94,12 +102,11 @@ body {
 }
 
 .change-game-button {
-      background-color: #A1A1A4;
-      border-radius: 6px;
-      border-width: 0;
+      background-color: #00788C;
+      border-radius: 5px;
+      border: solid 3px #A1A1A4;
       box-sizing: border-box;
       color: white;
-      cursor: pointer;
       font-size: 100%;
       height: 50px;
       width: 150px;
