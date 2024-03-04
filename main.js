@@ -102,7 +102,7 @@ function playClassic(){
     headerMainDisplayRPS.classList.remove("hidden")
     headerMainDisplayRPSDF.classList.add("hidden")
     matchResultsDisplay.classList.add("hidden")
-    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
+    bannerDisplay.innerText = 'CHOOSE YOUR ITEM'
 }
 function playAdvanced(){
     rpsdfIconDisplay.classList.remove("hidden")
@@ -112,7 +112,7 @@ function playAdvanced(){
     headerMainDisplayRPSDF.classList.remove("hidden")
     headerMainDisplayRPS.classList.add("hidden")
     matchResultsDisplay.classList.add("hidden")
-    bannerDisplay.innerText = 'CHOOSE YOUR BATTLE'
+    bannerDisplay.innerText = 'CHOOSE YOUR ITEM'
 }
 
 function changeGame(){
@@ -156,16 +156,12 @@ function getRPSResult(humanChoice){
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
-    setTimeout(playClassic, 1500)
+    setTimeout(playClassic, 2000)
 }
 
 function getRPSDFResult(humanChoice){
     bannerDisplay.innerText = '';
     var cpuChoice = cpuTurnRPSDF();
-    //create function for winner
-    //create function for database
-            //"____" is the winner &
-            //"Winner Count _____"
     console.log("HUMAN CHOICE RPSDF:", humanChoice)
     console.log("CPU CHOICE RPSDF:", cpuChoice)
     displayResults(humanChoice, cpuChoice)
@@ -183,48 +179,61 @@ function getRPSDFResult(humanChoice){
         (humanChoice === "Fire" && cpuChoice === "Scissors")    ||
         (humanChoice === "Fire" && cpuChoice === "Rock")
         ){
-         //more functions needed
-            humanNewCount++;
-            displayHumanWin(humanNewCount);
-            humanWins(humanChoice, cpuChoice);
+        humanNewCount++;
+        displayHumanWin(humanNewCount);
+         humanWins(humanChoice, cpuChoice);
     } else { 
-        //more functions needed
         cpuNewCount++;
         displayCpuWin(cpuNewCount);
         cpuWins(humanChoice, cpuChoice);
     }
-    setTimeout(playAdvanced, 1500)
+    setTimeout(playAdvanced, 2000)
 }
 
 function tieGame(humanChoice) {
     if (humanChoice === "Rock"){
-        bannerDisplay.innerText = "Rocky! Rocky! Rocky! 👔 match!"
+        bannerDisplay.innerText = "Rocky! Rocky! Rocky! TIE 👔 match!"
     } else if 
         (humanChoice === "Scissors"){
-        bannerDisplay.innerText = "SCISSOR ME TIMBERS! 👔 match!"
+        bannerDisplay.innerText = "SCISSOR ME TIMBERS! TIE 👔 match!"
     } else if 
         (humanChoice === "Paper"){
-        bannerDisplay.innerText = `Paper Boi, Paper Boi! All about that paper, boy!
-        👔 match!`
+        bannerDisplay.innerText = `TIE 👔 match!`
     } else if 
         (humanChoice === "Dinosaur"){
-        bannerDisplay.innerText = `Clever girls! 👔 match!`
+        bannerDisplay.innerText = `Clever girls! TIE 👔 match!`
     } else
-        bannerDisplay.innerText = "FIRE FIRE FIRE FIRE 👔 match!"
+        bannerDisplay.innerText = "We're having a fire sale! TIE 👔 match!"
 }
 
 function displayResults(humanChoice, cpuChoice){
+    displayHumanChoice(humanChoice);
+    displayCpuChoice(cpuChoice);
+    changeGameButton.classList.add("hidden")
     rpsdfIconDisplay.classList.add("hidden");
     rpsIconDisplay.classList.add("hidden");
     matchResultsDisplay.classList.remove("hidden")
-    humanChoiceDisplay.innerHTML = humanChoice;
-    cpuChoiceDisplay.innerHTML = cpuChoice;
 }
 
+function displayHumanChoice(humanChoice){
+    if (humanChoice === "Rock"){
+        humanChoiceDisplay.innerHTML = `<img class="rock-image" src="./assets/rock.png"></img>`}
+    else if (humanChoice === "Scissors"){
+        humanChoiceDisplay.innerHTML = `<img class="scissors-image" src="./assets/scissors.png"></img>`}
+    else if (humanChoice === "Paper"){
+        humanChoiceDisplay.innerHTML = `<img class="paper-image" src="./assets/paper.png"></img>`}
+    else if (humanChoice === "Dinosaur"){
+        humanChoiceDisplay.innerHTML = `<img class="dino-image" src="./assets/dino.png"></img>`}
+    else {humanChoiceDisplay.innerHTML = `<img class="fire-image" src="./assets/fire.png"></img>`}
+}
 
-//Create two functions for showing each 
-
-
+function displayCpuChoice(cpuChoice){
+    if (cpuChoice === "Rock"){cpuChoiceDisplay.innerHTML = `<img class="rock-image" src="./assets/rock.png"></img>`}
+    else if (cpuChoice === "Scissors"){cpuChoiceDisplay.innerHTML = `<img class="scissors-image" src="./assets/scissors.png"></img>`}
+    else if (cpuChoice === "Paper"){cpuChoiceDisplay.innerHTML = `<img class="paper-image" src="./assets/paper.png"></img>`}
+    else if (cpuChoice === "Dinosaur"){cpuChoiceDisplay.innerHTML = `<img class="dino-image" src="./assets/dino.png"></img>`}
+    else {cpuChoiceDisplay.innerHTML = `<img class="fire-image" src="./assets/fire.png"></img>`}
+}
 
 function humanWins(humanChoice, cpuChoice) {
     bannerDisplay.innerText = `${humanChoice} beats ${cpuChoice}! ${humanPlayer.name} is a WINNER!`

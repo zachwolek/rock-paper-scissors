@@ -1,11 +1,13 @@
 body {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    font-family: 'ArcadeClassic', sans-serif;
+    font-family: 'superhelio _regular', sans-serif;
+    width: 100vw; 
+    height: 100vh; 
     background-color: #371F76;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .column-left,
@@ -13,38 +15,71 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
     flex-basis: 25%;
-    border: 1px solid;
+    font-size: 15px;
+    background-image: linear-gradient(#371F76, #371F76, #371F76, #00788C); 
+    margin: 0;
+    padding: 0;
+}
+
+.human-image,
+.cpu-image {
+    padding-bottom: 30px;
 }
 
 .column-center {
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
-    border-style: solid 1px;
+    align-items: center;
+    flex-basis: 50%; 
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+    padding: 10px grey;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 40px;
 }
 
 .human-image,
 .cpu-image {
     height: 100px;
     width: 100px;
-    font-size: 100px 
+    font-size: 100px
 }
 
 .choose-game {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: space-evenly;
+    justify-content: space-evenly;
+    border: solid 1px white;
+    width: 500px
 }
 
-.play-classic-button,
-.play-advanced-button {
-    border: 1px solid;
+.rules3,
+.rules5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    border: solid 1px white;
+    height: 250px;
+    width: 200px;
+    padding-top: 40px;
 }
 
-header,
-.banner,
+
 .weapon-choices-rps, 
 .top-row-rpsdf,
 .bottom-row-rpsdf {
@@ -56,14 +91,6 @@ header,
 .weapon-select {
     width: 200px;
     height: 200px;
-    border: 1px solid;
-}
-
-.rules3,
-.rules5 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .change-game-button {
@@ -87,37 +114,13 @@ header,
     width: 200px;
 }
 
-/* #rock-select {
-    background: grey;
-} */
-
-/* #paper-select {
-    background: yellow;
-} */
-
-/* #scissors-select {
-    background: red;
+.match-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 100px;
+    border-top: 200px;
 }
-
-#rock-select-5 {
-    background: grey;
-}
-
-#paper-select-5 {
-    background: yellow;
-}
-
-#scissors-select-5 {
-    background: red;
-}
-
-#dino-select-5 {
-    background: green;
-}
-
-#fire-select-5 {
-    background: purple;
-} */
 
 .hidden {
     display: none;
