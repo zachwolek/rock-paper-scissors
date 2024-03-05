@@ -42,3 +42,5 @@ To hide this issue as much as possible, font size was explicitly chosen on "head
 
 This in all was a win, in that it was a valuable experience in having to weigh your choices and choosing a consequence. 
 
+3) A third win was learning how to help your webpage become accessible with disabilities, in that while alternative texts were provided for the main images, I learned by trial and error this also applies when inserting HTML from the Javascript
+
