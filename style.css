@@ -91,6 +91,7 @@ body {
 .rules5:hover {
     background-image: linear-gradient(#371F76, #00788C, #00788C);
     color: #F9423A;
+    cursor: pointer;
   }
 
 .weapon-choices-rps, 
@@ -123,6 +124,7 @@ body {
 .change-game-button:hover {
     background-image: linear-gradient(#371F76, #00788C, #00788C, #00788C);
     color: #F9423A;
+    cursor: pointer;
     }
 
 .rock-image,
@@ -154,7 +156,3 @@ body {
 .hidden {
     display: none;
   }
-
-.temp-background {
-    background-color: #371F76;
-}
