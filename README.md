@@ -8,16 +8,22 @@ At any point outside of the "Choose Game" screen and "results" display, the user
 
 After each win by user or computer, the "Wins" count in each profile gets added +1 for every respective win in a match. A tie does not reflect an update for either win count. 
 
-### Installation Instructions:
+### Live GitHub Site:
+[//]: <> (What site can a person access your live site?)
+https://zachwolek.github.io/rock-paper-scissors/
+
+
+ ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 1) Access the form here: https://github.com/zachwolek/rock-paper-scissors
-2) Copy the SSH repository URL git@github.com:zachwolek/rock-paper-scissors.git
+2) Copy the SSH repository URL `git@github.com:zachwolek/rock-paper-scissors.git`
 3) Open terminal and 'cd' into the directory you wish to clone 
 4) Clone the repository by submitting `git clone git@github.com:zachwolek/rock-paper-scissors.git`
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-The project has the ability to to select any item across two separate games, with a hover event that helps the user see the weapon choice https://ibb.co/0jGh1yf
+The project has the ability to to select any item across two separate games, with a hover event that helps the user see the weapon choice
+![alt text](assets/ScreenshotRPS.png)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
@@ -34,13 +40,5 @@ The learning goals of the project were to develop an understanding of integratin
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
  1) The strongest win was doing the project on my own and being fully responsible for every line of code. At the very beginning there were a few fundamental oversights in planning out JS and HTML specifically, which created a ripple of effects. 
-
- Taking the time to keep going back to the beginning and working on "clean code" was a much needed exercise. 
-2) Another win comes from learning how dynamic the process of web design becomes. One minor cosmetic issue faced was regarding the font choice and centering during flex-wrap. A free online font style found was chosen to give the Rock Paper Scissor game a retro arcade feel, but this font style created issues where wrapping text would "un-center" the display. This issue of adhering to "center" did not persist with fonts that were pre-loaded standard choices. The choice to keep the free font was merely a styling choice, as the personal preference to integrate a unique retro arcade feel outweighed centering display. 
-
-To hide this issue as much as possible, font size was explicitly chosen on "headline" and "banner" displays to be as large as possible without wrappingh, have the centering issues appear on as little instances as possible without sacrificing readability. 
-
-This in all was a win, in that it was a valuable experience in having to weigh your choices and choosing a consequence. 
-
-3) A third win was learning how to help your webpage become accessible with disabilities, in that while alternative texts were provided for the main images, I learned by trial and error this also applies when inserting HTML from the Javascript
+2) A second win was learning how to help your webpage become accessible with disabilities, in that while alternative texts were provided for the main images, I learned by trial and error this also applies when inserting HTML from the Javascript
 
